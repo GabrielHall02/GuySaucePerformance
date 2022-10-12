@@ -21,7 +21,7 @@ function App() {
     const [user, setUser] = React.useState("");
 
     useEffect(() => {
-        fetch("http://localhost:5005/api/v1/users/login", {
+        fetch("https://guysauceperformance.herokuapp.com/api/v1/users/login", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
