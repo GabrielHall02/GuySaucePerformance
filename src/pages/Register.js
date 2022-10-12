@@ -14,7 +14,7 @@ function Register () {
         console.log(email);
         console.log(password);
 
-        const response = await fetch(`http://localhost:5005/api/v1/pendingUsers/`, {
+        const response = await fetch(`https://guysauceperformance.herokuapp.com/api/v1/pendingUsers/`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
