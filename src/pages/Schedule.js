@@ -21,7 +21,7 @@ function Schedule () {
         console.log (date, duration);
         // Create new date with date and time
         const newDate = new Date(date);
-        const response = await fetch("https://guysauceperformance.herokuapp.com/api/v1/schedule", {
+        const response = await fetch("/api/v1/schedule", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -69,7 +69,7 @@ function Schedule () {
     const [schedules, setSchedules] = useState([])
 
     useEffect(() => {
-        fetch("https://guysauceperformance.herokuapp.com/api/v1/schedule", {
+        fetch("/api/v1/schedule", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -92,7 +92,7 @@ function Schedule () {
     const [loggedUser, setUser] = React.useState("");
 
     useEffect(() => {
-        fetch("https://guysauceperformance.herokuapp.com/api/v1/users/login", {
+        fetch("/api/v1/users/login", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

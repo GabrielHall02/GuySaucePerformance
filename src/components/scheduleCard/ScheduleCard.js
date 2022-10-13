@@ -7,7 +7,7 @@ const ScheduleCard = (props) => {
     const [loggedUser, setUser] = React.useState("");
 
     useEffect(() => {
-        fetch("https://guysauceperformance.herokuapp.com/api/v1/users/login", {
+        fetch("/api/v1/users/login", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -44,7 +44,7 @@ const ScheduleCard = (props) => {
 
         console.log(scheduleId)
 
-        const response = await fetch("https://guysauceperformance.herokuapp.com/api/v1/schedule/?id=" + scheduleId, {
+        const response = await fetch("/api/v1/schedule/?id=" + scheduleId, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",

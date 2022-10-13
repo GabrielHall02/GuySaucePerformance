@@ -14,7 +14,7 @@ function Login () {
     async function login (event) {
         event.preventDefault();
 
-        const response = await fetch(`https://guysauceperformance.herokuapp.com/api/v1/users/login/?email=${email}&password=${password}`, {
+        const response = await fetch(`/api/v1/users/login/?email=${email}&password=${password}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -26,14 +26,14 @@ function Login () {
 
         if (data.email === email) {
             setLoginStatus("Success")
-            window.location.href = "/Schedule";
+            //window.location.href = "/Schedule";
         }else {
             setLoginStatus("Invalid email or password")
         }
     }
 
     useEffect(()=>{
-        fetch("https://guysauceperformance.herokuapp.com/api/v1/users/login", {
+        fetch("/api/v1/users/login", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -45,7 +45,8 @@ function Login () {
             console.log(data)
             try{
                 if (data.loggedIn === true) {
-                    window.location.href = "/Schedule";
+                    //window.location.href = "/Schedule";
+                    console.log("Logged in")
                 }
             }catch{
                 console.log("Error");

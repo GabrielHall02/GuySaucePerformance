@@ -12,7 +12,7 @@ function ActivateUser () {
         const token = window.location.pathname.split("/")[2].slice(1);
         console.log(token)
 
-        fetch(`https://guysauceperformance.herokuapp.com/api/v1/pendingUsers/activate/?id=${token}`, {
+        fetch(`/api/v1/pendingUsers/activate/?id=${token}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

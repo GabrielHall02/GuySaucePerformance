@@ -16,7 +16,7 @@ function Profile () {
     const [value, setValue] = React.useState("");
 
     useEffect(() => {
-        fetch("https://guysauceperformance.herokuapp.com/api/v1/users/login", {
+        fetch("/api/v1/users/login", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -46,7 +46,7 @@ function Profile () {
 
     function logout () {
         // Clear the cookie
-        fetch("https://guysauceperformance.herokuapp.com/api/v1/users/logout", {
+        fetch("/api/v1/users/logout", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -70,7 +70,7 @@ function Profile () {
         key = key.toLowerCase();
         console.log(key +":" + value);
         // Send the request to the backend
-        const response = await fetch("https://guysauceperformance.herokuapp.com/api/v1/users/", {
+        const response = await fetch("/api/v1/users/", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
