@@ -106,7 +106,7 @@ function Schedule () {
                 if (data.loggedIn === true) {
                     setUser(data.user);
                 } else {
-                    //window.location.href = "/Login"
+                    window.location.href = "/Login"
                 }
             }catch{
                 console.log("Error");
