@@ -14,7 +14,7 @@ function Login () {
     async function login (event) {
         event.preventDefault();
 
-        const response = await fetch(`/api/v1/users/login/?email=${email}&password=${password}`, {
+        const response = await fetch(`https://guysauceperformance.herokuapp.com/api/v1/users/login/?email=${email}&password=${password}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
