@@ -46,7 +46,7 @@ function Login () {
             try{
                 if (data.loggedIn === true) {
                     //window.location.href = "/Schedule";
-                    console.log("Logged in")
+                    console
                 }
             }catch{
                 console.log("Error");
