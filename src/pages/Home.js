@@ -8,9 +8,10 @@ function Home () {
     async function getStarted (event) {
         event.preventDefault();
 
-        const response = await fetch("https://guysauceperformance.herokuapp.com/api/v1/users/login", {
+        const response = await fetch("https://guysauceperformance.herokuapp.com/api/v1/users/login/", {
             method: "GET",
             headers: {
+                "Access-Control-Allow-Origin": "*",
                 "Content-Type": "application/json",
             },
             credentials: "include",
