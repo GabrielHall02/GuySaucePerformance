@@ -25,6 +25,7 @@ function Profile () {
         })
         .then((res) => res.json())
         .then((data) => {
+            console.log(data)
             try{
                 if (data.loggedIn === true) {
                     setUsername(data.user.username);

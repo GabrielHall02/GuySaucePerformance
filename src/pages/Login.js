@@ -42,6 +42,7 @@ function Login () {
         })
         .then((res) => res.json())
         .then((data) => {
+            console.log(data)
             try{
                 if (data.loggedIn === true) {
                     window.location.href = "/Schedule";

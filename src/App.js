@@ -30,6 +30,7 @@ function App() {
         })
         .then((res) => res.json())
         .then((data) => {
+            console.log(data)
             try{
                 if (data.loggedIn === true) {
                     setUser(data.user);
