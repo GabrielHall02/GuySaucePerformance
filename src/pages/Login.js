@@ -26,7 +26,7 @@ function Login () {
 
         if (data.email === email) {
             setLoginStatus("Success")
-            //window.location.href = "/Schedule";
+            window.location.href = "/Schedule";
         }else {
             setLoginStatus("Invalid email or password")
         }
