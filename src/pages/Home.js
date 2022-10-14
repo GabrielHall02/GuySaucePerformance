@@ -20,7 +20,7 @@ function Home () {
             const data = await response.json();
             console.log(data);
             try{
-                if (data.loggedIn == false) {
+                if (data.loggedIn === true) {
                     console.log("User is logged in");
                     window.location.href = "/Schedule";
                     
