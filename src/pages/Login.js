@@ -24,7 +24,9 @@ function Login () {
         const data = await response.json();
         console.log(data);
 
-        if (data.email === email) {
+        if (data.user) {
+            // Store token
+            localStorage.setItem("token", data.user);
             setLoginStatus("Success")
             window.location.href = "/Schedule";
         }else {

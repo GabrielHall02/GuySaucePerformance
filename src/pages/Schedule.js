@@ -90,9 +90,20 @@ function Schedule () {
         )
     }, [])
 
-    /*const [loggedUser, setUser] = React.useState("");
+    const [loggedUser, setUser] = React.useState("");
 
     useEffect(() => {
+
+        const token = localStorage.getItem("token");
+        if (token) {
+            // Decode token
+            const user = jwt_decode(token);
+            setUser(user);
+        }
+
+
+
+        /*
         fetch("https://guysauceperformance.herokuapp.com/api/v1/users/login", {
             method: "GET",
             headers: {
@@ -113,8 +124,8 @@ function Schedule () {
                 console.log("Error");
             }
         }
-        )
-    },[])*/
+        )*/
+    },[])
 
     return (
         <div className="flex-row-center">
