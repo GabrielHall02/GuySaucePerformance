@@ -32,7 +32,10 @@ function Home () {
                 console.log("Error");
                 window.location.href = "/Login";
             }
+        }else{
+            window.location.href = "/Login";
         }
+        
     }
     
     
