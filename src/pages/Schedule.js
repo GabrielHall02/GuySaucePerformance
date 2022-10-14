@@ -16,9 +16,9 @@ function Schedule () {
         event.preventDefault();
 
         // If no user is logged in, redirect to login page
-        /*if (loggedUser === "") {
+        if (loggedUser === "") {
             window.location.href = "/Login"
-        }*/
+        }
 
         console.log (date, duration);
         // Create new date with date and time
@@ -31,8 +31,7 @@ function Schedule () {
             body: JSON.stringify({
                 date: newDate,
                 duration: duration,
-                //username: loggedUser.username,
-                username: "test",
+                username: loggedUser.username,
             })
         })
         if (response.ok) {
@@ -53,10 +52,10 @@ function Schedule () {
 
     function openModal() {
         // Check if user is logged in
-        /*if (loggedUser === "") { 
+        if (loggedUser === "") { 
             window.location.href = "/Login"
             return
-        }*/
+        }
         setIsOpen(true);
       }
     
@@ -98,10 +97,27 @@ function Schedule () {
 
         const token = localStorage.getItem("token");
         if (token) {
-            // Decode token
-            const user = jwt.decode(token);
-            setUser(user);
+            fetch ("https://guysauceperformance.herokuapp.com/api/v1/users/login", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "authorization": `Bearer ${token}`
+                },
+                credentials: "include",
+            })
+            .then((res) => res.json())
+            .then((data) => {
+                try{
+                    console.log(data)
+                    if (data.loggedIn === true) {
+                        setUser(data.user)
+                    }
+                }catch{
+                    console.log("Error");
+                }
+            })
         }
+        
 
 
 
