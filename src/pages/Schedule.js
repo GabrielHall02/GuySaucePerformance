@@ -89,7 +89,7 @@ function Schedule () {
         )
     }, [])
 
-    const [loggedUser, setUser] = React.useState("");
+    /*const [loggedUser, setUser] = React.useState("");
 
     useEffect(() => {
         fetch("https://guysauceperformance.herokuapp.com/api/v1/users/login", {
@@ -113,7 +113,7 @@ function Schedule () {
             }
         }
         )
-    },[])
+    },[])*/
 
     return (
         <div className="flex-row-center">

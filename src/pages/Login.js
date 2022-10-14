@@ -26,12 +26,13 @@ function Login () {
 
         if (data.email === email) {
             setLoginStatus("Success")
-            //window.location.href = "/Schedule";
+            window.location.href = "/Schedule";
         }else {
             setLoginStatus("Invalid email or password")
         }
     }
 
+    /*
     useEffect(()=>{
         fetch("/api/v1/users/login", {
             method: "GET",
@@ -42,8 +43,8 @@ function Login () {
         })
         .then((res) => res.json())
         .then((data) => {
-            console.log(data)
             try{
+                console.log(data)
                 if (data.loggedIn === true) {
                     //window.location.href = "/Schedule";
                     console.log("Logged in")
@@ -54,7 +55,7 @@ function Login () {
             }
         }
         )
-    },[])
+    },[])*/
     
     return (
         <>
