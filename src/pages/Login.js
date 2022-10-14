@@ -33,31 +33,6 @@ function Login () {
             setLoginStatus("Invalid email or password")
         }
     }
-
-    /*
-    useEffect(()=>{
-        fetch("/api/v1/users/login", {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            credentials: "include",
-        })
-        .then((res) => res.json())
-        .then((data) => {
-            try{
-                console.log(data)
-                if (data.loggedIn === true) {
-                    //window.location.href = "/Schedule";
-                    console.log("Logged in")
-                }
-            }catch{
-                console.log("Error");
-                setLoginStatus("Internal error")
-            }
-        }
-        )
-    },[])*/
     
     return (
         <>

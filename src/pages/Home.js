@@ -7,34 +7,35 @@ function Home () {
 
     async function getStarted (event) {
         event.preventDefault();
-
-        const response = await fetch("https://guysauceperformance.herokuapp.com/api/v1/users/login/", {
-            method: "GET",
-            headers: {
-                "Access-Control-Allow-Origin": "*",
-                "Content-Type": "application/json",
-            },
-            credentials: "include",
-        })
-        const data = await response.json();
-        console.log(data);
-        try{
-            if (data.loggedIn === false) {
-                console.log("User is not logged in");
+        const token = localStorage.getItem("token");
+        if (token) {
+            const response = await fetch("https://guysauceperformance.herokuapp.com/api/v1/users/login/", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "authorization": `Bearer ${token}`
+                },
+                credentials: "include",
+            })
+            const data = await response.json();
+            console.log(data);
+            try{
+                if (data.loggedIn == false) {
+                    console.log("User is logged in");
+                    window.location.href = "/Schedule";
+                    
+                } else{
+                    console.log("User is not logged in");
+                    window.location.href = "/Login";
+                }
+            }catch{
+                console.log("Error");
                 window.location.href = "/Login";
-            } else{
-                console.log("User is logged in");
-                window.location.href = "/Schedule";
             }
-        }catch{
-            console.log("Error");
-            window.location.href = "/Login";
         }
     }
-
     
     
-
     return (
         <>
         <div className="hero_section flex-col-center">

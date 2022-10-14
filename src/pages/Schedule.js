@@ -93,7 +93,6 @@ function Schedule () {
     const [loggedUser, setUser] = React.useState("");
 
     useEffect(() => {
-
         const token = localStorage.getItem("token");
         if (token) {
             fetch ("https://guysauceperformance.herokuapp.com/api/v1/users/login", {
@@ -117,31 +116,6 @@ function Schedule () {
             })
         }
         
-
-
-
-        /*
-        fetch("https://guysauceperformance.herokuapp.com/api/v1/users/login", {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            credentials: "include",
-        })
-        .then((res) => res.json())
-        .then((data) => {
-            console.log(data)
-            try{
-                if (data.loggedIn === true) {
-                    setUser(data.user);
-                } else {
-                    window.location.href = "/Login"
-                }
-            }catch{
-                console.log("Error");
-            }
-        }
-        )*/
     },[])
 
     return (

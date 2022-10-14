@@ -16,15 +16,18 @@ function Profile () {
     const [value, setValue] = React.useState("");
 
     useEffect(() => {
-        fetch("https://guysauceperformance.herokuapp.com/api/v1/users/login", {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            credentials: "include",
-        })
-        .then((res) => res.json())
-        .then((data) => {
+        const token = localStorage.getItem("token");
+        if (token) {
+            fetch ("https://guysauceperformance.herokuapp.com/api/v1/users/login", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "authorization": `Bearer ${token}`
+                },
+                credentials: "include",
+            })
+            .then((res) => res.json())
+            .then((data) => {
             console.log(data)
             try{
                 if (data.loggedIn === true) {
@@ -39,29 +42,17 @@ function Profile () {
             }catch{
                 console.log("Error");
             }
-        }
-        )
+            })
+     }
     },[])
 
 
     function logout () {
-        // Clear the cookie
-        fetch("https://guysauceperformance.herokuapp.com/api/v1/users/logout", {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            credentials: "include",
-        })
-        .then((res) => res.json())
-        .then((data) => {
-            console.log(data);
-            if (data.status === "success") {
-                window.location.href = "/"
-            }
-        }
-        )
-
+        // Clear local storage
+        localStorage.clear();
+        // Redirect to login page
+        window.location.href = "/";
+        
     }
 
     async function changeUser (event, key, value) {
