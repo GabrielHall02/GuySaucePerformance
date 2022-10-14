@@ -66,7 +66,7 @@ const ScheduleCard = (props) => {
         }
         else {
             checked[0].checked = false
-            alert("You can't delete this schedule - You might not be logged in or you aren't be the owner of this schedule")
+            alert("You can't delete this schedule - You might not be logged in or you might not be the owner of this schedule")
         }
 
     }
