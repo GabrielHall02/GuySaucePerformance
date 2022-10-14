@@ -43,7 +43,9 @@ function Profile () {
                 console.log("Error");
             }
             })
-     }
+        }else{
+            window.location.href = "/Login"
+        }   
     },[])
 
 
