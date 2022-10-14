@@ -14,9 +14,9 @@ function Schedule () {
         event.preventDefault();
 
         // If no user is logged in, redirect to login page
-        /*if (loggedUser === "") {
+        if (loggedUser === "") {
             window.location.href = "/Login"
-        }*/
+        }
 
         console.log (date, duration);
         // Create new date with date and time
@@ -29,7 +29,8 @@ function Schedule () {
             body: JSON.stringify({
                 date: newDate,
                 duration: duration,
-                username: loggedUser.username,
+                //username: loggedUser.username,
+                username: "test",
             })
         })
         if (response.ok) {
@@ -50,10 +51,10 @@ function Schedule () {
 
     function openModal() {
         // Check if user is logged in
-        if (loggedUser === "") { 
+        /*if (loggedUser === "") { 
             window.location.href = "/Login"
             return
-        }
+        }*/
         setIsOpen(true);
       }
     
