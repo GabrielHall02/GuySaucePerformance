@@ -3,6 +3,8 @@ import ScheduleCard from "../components/scheduleCard/ScheduleCard"
 import Modal from "react-modal"
 import { Icon } from '@iconify/react';
 import "./style.css"
+import jwt from "jsonwebtoken"
+
 
 function Schedule () {
 
@@ -97,7 +99,7 @@ function Schedule () {
         const token = localStorage.getItem("token");
         if (token) {
             // Decode token
-            const user = jwt_decode(token);
+            const user = jwt.decode(token);
             setUser(user);
         }
 
