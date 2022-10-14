@@ -3,7 +3,6 @@ import ScheduleCard from "../components/scheduleCard/ScheduleCard"
 import Modal from "react-modal"
 import { Icon } from '@iconify/react';
 import "./style.css"
-import jwt from "jsonwebtoken"
 
 
 function Schedule () {
