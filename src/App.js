@@ -19,6 +19,17 @@ function App() {
     
 
     const [user, setUser] = React.useState("");
+    const [loading, setLoading] = React.useState(true);
+    const loader = document.getElementById("loader");
+
+    if (loading) {
+        setTimeout(() => {
+            loader.style.display = "none";
+            setLoading(false);
+        }, 1000);
+    }
+
+
 
     useEffect(() => {
         const token = localStorage.getItem("token");
@@ -48,7 +59,7 @@ function App() {
 
     
     return ( 
-        <div>
+        !loading && <div>
             <BrowserRouter>
                 <Navbar user={user.username}/>
                 <Routes>
