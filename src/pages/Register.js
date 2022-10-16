@@ -52,7 +52,7 @@ function Register () {
                     <input type="submit" className="btn-m" value="Register" />
                 </form>
                 
-                <Link to="/Login" className="btn-m" style={{width:"100%", margin:"5px", backgroundImage: "linear-gradient(to right, #aaa 0%, #aaa 51%, #F8B716 100%)", textDecoration:"None"}}> Login </Link>
+                <Link to="/Login" className="help-text"> <p>Já tem conta? </p><p style={{color:"#446DD9",paddingLeft:"10px"}}>Iniciar agora → </p> </Link>
             </div>
         </div>
         </>
