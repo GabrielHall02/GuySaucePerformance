@@ -6,11 +6,11 @@ import {
   } from "react-router-dom";
 
 import "./App.css";
-import "./loader.css"
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Navbar from "./components/navbar/Navbar"
+import Loader from "./components/loader/Loader"
 import Activate from "./pages/ActivateUser";
 import Profile from "./pages/Profile";
 import Schedule from "./pages/Schedule";
@@ -60,9 +60,10 @@ function App() {
 
     
     return ( 
-        !loading && <div>
+        <div>
             <BrowserRouter>
                 <Navbar user={user.username}/>
+                {loading ? <Loader/> : null}
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/login" element={<Login/>}/>
