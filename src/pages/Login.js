@@ -47,7 +47,7 @@ function Login () {
                     <p className={loginStatus === "Success" ? "success-txt" : "error-txt"}>{loginStatus}</p>
                     <input type="submit" className="btn-m" value="Login" />
                 </form>
-            <Link to="/Register" className="help-text"> <p>Ainda não tem conta? </p><p style={{color:"#446DD9",paddingLeft:"10px"}}>Criar agora → </p> </Link>
+            <Link to="/Register" className="help-text"> <p>Ainda não tens conta? </p><p style={{color:"#446DD9",paddingLeft:"10px"}}>Criar agora → </p> </Link>
             </div>
         </div>
         </>

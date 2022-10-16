@@ -28,7 +28,6 @@ function Register () {
         const data = await response.json();
 
         if (data.status === "success") {
-            //window.location.href = "/Login";
             alert("check mail")
         }else {
             console.log("Error");
@@ -52,7 +51,7 @@ function Register () {
                     <input type="submit" className="btn-m" value="Register" />
                 </form>
                 
-                <Link to="/Login" className="help-text"> <p>Já tem conta? </p><p style={{color:"#446DD9",paddingLeft:"10px"}}>Iniciar agora → </p> </Link>
+                <Link to="/Login" className="help-text"> <p>Já tens conta? </p><p style={{color:"#446DD9",paddingLeft:"10px"}}>Iniciar agora → </p> </Link>
             </div>
         </div>
         </>
