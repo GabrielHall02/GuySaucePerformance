@@ -10,7 +10,6 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Navbar from "./components/navbar/Navbar"
-import Loader from "./components/loader/Loader"
 import Activate from "./pages/ActivateUser";
 import Profile from "./pages/Profile";
 import Schedule from "./pages/Schedule";
