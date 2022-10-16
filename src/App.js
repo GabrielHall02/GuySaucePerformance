@@ -63,7 +63,7 @@ function App() {
         <div>
             <BrowserRouter>
                 <Navbar user={user.username}/>
-                {loading ? <Loader/> : null}
+                {loading ? <Loader/> : <div></div>}
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/login" element={<Login/>}/>
