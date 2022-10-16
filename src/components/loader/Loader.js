@@ -2,7 +2,7 @@ import React from "react"
 import "./loader.css"
 
 
-export default function Home () {
+export default function Loader () {
     return (
         <div id="loader" class="loader">
         <div class="loader_container">
