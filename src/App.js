@@ -20,17 +20,6 @@ function App() {
     
 
     const [user, setUser] = React.useState("");
-    const [loading, setLoading] = React.useState(true);
-    const loader = document.getElementById("loader");
-
-    if (loading) {
-        setTimeout(() => {
-            loader.style.display = "none";
-            setLoading(false);
-        }, 1000);
-    }
-
-
 
     useEffect(() => {
         const token = localStorage.getItem("token");
@@ -63,7 +52,6 @@ function App() {
         <div>
             <BrowserRouter>
                 <Navbar user={user.username}/>
-                {loading ? <Loader/> : <div></div>}
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/login" element={<Login/>}/>
